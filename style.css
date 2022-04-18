@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url('image/13190.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.getBtn{
+    width: 100px;
+    border-radius: 4px;
+    background-color: royalblue ;
+    color: aliceblue;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 500;
+}
+.getBtn:hover{
+    background-color: #06fc6cf3;
+}
+.postBtn{
+         width: 100px;
+        border-radius: 4px;
+        background-color: rgba(16, 180, 14, 0.811) ;
+        color:white;
+        font-size: 20px;
+        padding: 10px;
+        margin-right: 20px;
+        border-radius: 30px;
+        outline: none;
+        border-radius: 30px;
+        cursor: pointer;
+}
+.postBtn:hover{
+    background-color: #e21212ee;
+}
+.putBtn{
+    width: 100px;
+   border-radius: 4px;
+   background-color: rgba(226, 13, 13, 0.258) ;
+   color: #000000ee;
+   font-size: 20px;
+   padding: 10px;
+   margin-right: 20px;
+   cursor: pointer;
+   border-radius: 30px;
+}
+.putBtn:hover{
+    background-color: #fff;
+}
+.deleteBtn{
+    width: 100px;
+    border-radius: 4px;
+    background-color: rgb(235, 37, 66) ;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.deleteBtn:hover{
+    background-color: blue;
+}
