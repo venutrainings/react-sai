@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet">
+    <script src="react.development.js"></script>
+    <script src="babel.js"></script>
+    <script src="react-dom.development.js"></script>
+</head>
+<body>
+ <div id="root"></div>
+<script type="text/babel">
+/*   class App extends React.Component{
+        constructor(){
+            super();
+            this.state={
+                cnt:0,
+                
+            }
+        }
+        // normal function:
+        fnClick(){
+             this.setState({
+                cnt:this.state.cnt+1,
+               // cnt:this.state.cnt-1
+             })
+         }
+         
+        render(){
+            return(
+                <div className="container">
+                    <h1>count:{this.state.cnt}</h1>
+                    <button onClick={this.fnClick.bind(this)}>click</button>
+                </div>
+            )
+        }
+    } 
+ */
+     class App extends React.Component{
+        constructor(){
+            super();
+            this.state={
+                cnt:0,
+                
+            }
+        }
+        // normal function:
+        fnClick=()=>{
+             this.setState({
+                cnt:this.state.cnt+1,
+               // cnt:this.state.cnt-1
+             })
+         }
+         
+        render(){
+            return(
+                <div className="container">
+                    <h1>count:{this.state.cnt}</h1>
+                    <button onClick={this.fnClick}>click</button>
+                </div>
+            )
+        }
+    } 
+  
+ReactDOM.render(<App />,document.getElementById('root'),()=>alert('rendered'));
+ </script>
+
+</body>
+</html>

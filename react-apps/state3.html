@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+    <script src="react.development.js"></script>
+    <script src="babel.js"></script>
+    <script src="react-dom.development.js"></script>
+</head>
+<body>
+ <div id="root"></div>
+<script type="text/babel">
+    class App extends React.Component{
+        constructor(){
+            super();
+            this.state={
+                "cnt":0,
+
+
+            }
+        }
+        // normal function: setState with object and function as a arguments
+        fnClick(){
+             for(var i=0;i<=10;i++){
+                this.setState({
+                    "cnt":this.state.cnt+i
+                })
+                console.log('called '+i+ " time(s)")
+             }
+            
+         }
+         
+        render(){
+            return(
+                <div>
+                    <h1>count :{this.state.cnt}</h1>
+                    <button onClick={this.fnClick.bind(this)}>click</button>
+                   
+                </div>
+              
+            )
+        }
+    } 
+
+  ReactDOM.render(<App />,document.getElementById('root'));
+ </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="react.development.js"></script>
+    <script src="babel.js"></script>
+    <script src="react-dom.development.js"></script>
+</head>
+<body>
+ <div id="root"></div>
+
+<script type="text/babel">
+  /*   const App=()=>{
+       return <h1>hellow this is sai kuamr</h1>
+     }*/
+     class App extends React.Component{
+         constructor(){
+             super();
+             debugger;
+         }
+         render(){
+             return (<h1>hellow</h1>)
+         }
+     }
+     ReactDOM.render(<App />,document.getElementById('root'),()=>alert('rendered'));
+ </script>
+
+</body>
+</html>
