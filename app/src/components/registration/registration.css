@@ -1,0 +1,46 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/images/img3.jpg');
+    box-sizing: border-box;
+}
+.container{
+            background-color: transparent;
+            border: none;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            padding: 0 16px;
+            text-align: center;
+            box-shadow: -2px 5px 10px rgba(198, 21, 21, 0.4);
+            color: white;
+            height: 570px;
+            font-size: 20px;
+}
+.header{
+    color: rgb(225, 11, 11);
+}
+.form{
+            cursor: pointer;
+            display:inline-block;
+            padding: 6px;
+            text-align:left;
+            width: 330px;
+            
+            padding-left: 50px;
+            margin-bottom: 10px;
+        
+}
+
+
+
+#username,#email,#password,#isgenMale,#isgenFemale,#isCricket,#country,#isCricket,#isHoc{
+    font-size: inherit;
+    margin-bottom: 12px;
+}
+#photo{
+  display: inline-block;
+}
+
