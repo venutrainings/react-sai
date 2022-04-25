@@ -1,0 +1,57 @@
+[
+    {
+        "id":1,
+        "name":"saikumar",
+        "language":{
+            "known":{
+                "english":"speak",
+                "hindi":"no"
+            },
+            "hobbies":{
+                "book":"read",
+                "movies":"watch"
+            }
+        }
+},
+{
+    "id":2,
+        "name":"surya",
+        "language":{
+            "known":{
+                "english":"understan",
+                "hindi":"speak"
+            },
+            "hobbies":{
+                "book":"history",
+                "movies":"english"
+            }
+        }
+},
+{
+    "id":3,
+        "name":"saisurya",
+        "language":{
+            "known":{
+                "english":"speak",
+                "hindi":"speak"
+            },
+            "hobbies":{
+                "book":"novels",
+                "movies":"actions"
+            }
+        }
+},
+{
+    "id":4,
+        "name":"pusam",
+        "language":{
+            "known":{
+                "english":"speak",
+                "hindi":"understand"
+            },
+            "hobbies":{
+                "book":"robot",
+                "movies":"advantures"
+            }
+        }
+}]
