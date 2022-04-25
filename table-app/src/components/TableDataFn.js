@@ -34,6 +34,7 @@ function TableDataFn() {
   return (
     <div className='app'>
          <h2 className="header2">How to display the post details here</h2>
+         <input type="text" placeholder='search here your post'></input>
         {data.length > 0 ? 
         (
         <table>
