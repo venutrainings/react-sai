@@ -1,0 +1,15 @@
+.container{
+    background-color: #706767;
+}
+span{
+    color: rgb(19, 253, 19);
+}
+h2,h3{
+    color: gold;
+}
+button{
+    background-color: darkolivegreen;
+    color: white;
+    width: 200px;
+    padding: 5px;
+}
