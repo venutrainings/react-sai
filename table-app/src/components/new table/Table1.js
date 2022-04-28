@@ -3,7 +3,8 @@ import Table2 from './Table2';
 
 function Table1() {
     const [allData,setAllData]=useState([]);
-    const [filterData,setFilterData]=('');
+    const [searchInput,setSearchInput] = useState('')
+   
     useEffect(()=>{
         fetchData();
     },[])
@@ -15,7 +16,6 @@ function Table1() {
         .then(response=>{
             setAllData(response);
             console.log(response)
-
         })
     }
   const deleteEachRowData=(id)=>{
@@ -24,52 +24,41 @@ function Table1() {
   }
   
   const onChangeHandler=(e)=>{
-    let value=e.target.value;
-    let result=[];
-     console.log(value);
     if(e.target.value.length >=3){
-     result=allData.filter((val,index)=>{
-       return val.title.toLowerCase().includes(value.toLowerCase());
-     }) 
-  
-    setAllData(result)
-    } else{
-     let value="";
-      result=allData.filter((val,index)=>{
-        return val.title.toLowerCase().includes(value.toLowerCase())
-
-     })
-
-   setAllData(result)
+        setSearchInput(e.target.value)
+     }
+     else{
+         setSearchInput('')
+     }
+     const filteredData= allData.filter(each=> each.title.toLowerCase().includes(searchInput.toLowerCase()))
+     setAllData(filteredData)
     }
-  }
-
-
-  
 
   return (
     <div className='container'>
         <div>
-            <input type="text" placeholder='Please search here your post' onChange={(e)=>onChangeHandler(e)} />
+            <input type="text" placeholder='Please search here your post' onChange={onChangeHandler} />
         </div>
-        <table>
-            <thead>
-                <tr>
-                <th>id</th>
-                <th>title</th>
-                <th>body</th>
-                <th>delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    allData.map(each=>(
-                        <Table2 data={each} deleteEachRowData={deleteEachRowData} key={each.id}/>
-                    ))
-                }
-            </tbody>
-        </table>
-
+        {
+            allData.length > 0 ? (<table>
+                <thead>
+                    <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>body</th>
+                    <th>delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        allData.map(each=>(
+                            <Table2 data={each} deleteEachRowData={deleteEachRowData} key={each.id}/>
+                        ))
+                    }
+                </tbody>
+            </table>
+    ):(<div>No data found</div>)
+        }
         
     </div>
   )
