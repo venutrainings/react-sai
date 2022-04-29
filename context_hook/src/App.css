@@ -1,0 +1,32 @@
+.container{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin: 20px;
+  
+}
+td,th{
+  border: 1px solid darkgray;
+  padding: 8px;
+  text-align: center;
+ 
+}
+th{
+  background-color: blue;
+  color: darkred;
+}
+td{
+  background-color: rgb(220, 217, 218);
+  font-size: large;
+}
+table{
+  width: 100%;
+}
+h1{
+  text-align: center;
+}
+.App{
+  text-align: center;
+}
