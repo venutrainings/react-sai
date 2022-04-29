@@ -4,7 +4,7 @@ function Example5() {
     const [inputVal,setInputVal]=useState('');
     const [countvalue,setCountvalue]=useState('');
 
-    const count=useRef(0);
+    const count=useRef(null);
     const inputElement=useRef();
     const PreviousValue=useRef('');
 
@@ -13,7 +13,7 @@ function Example5() {
     })
     useEffect(()=>{
         PreviousValue.current=inputVal;
-    })
+    },[inputVal]);
 
     const FocusInput=()=>{
         inputElement.current.focus();
@@ -21,20 +21,17 @@ function Example5() {
 
     
   return (  
-    <div>
-        <h1>Using useRef Hook we can handle foucus, and print PreviousValues,persist the re-renders </h1>
-        <p>print the entered values here:</p>
+    <div className='container'>
+        <h1 className='header1'>Using useRef Hook we can handle foucus, and print PreviousValues,persist the re-renders </h1>
+        <h2 className='header2'>print the entered values here:</h2>
         <input type="text" ref={inputElement} value={inputVal} placeholder='Please enter the values here' onChange={e=>setInputVal(e.target.value)} /><br></br><br></br>
-        <h1>count the no of values you entered here:s</h1>
+        <h2 className='header2'>count the no of values and print the values you entered here:</h2>
         <input type="text" ref={inputElement}  value={countvalue} onChange={e=>setCountvalue(e.target.value)}  placeholder='type value here' /> <br></br><br></br>
         <button onClick={FocusInput}>InputFoucus</button>
-        <p>Print First Input values here:{inputVal}</p>
-        <p>Print Second Input values:{countvalue}</p>
-        <p>Print the Count rendered input values:{count.current}</p>
-
-        <p>Print the Previous entered values here:{PreviousValue.current}</p>
-         
-
+        <p className='print-values' >Print First Input values here:<span>{inputVal}</span></p>
+        <p className='print-values'>Print Second Input values:<span>{countvalue}</span></p>
+        <p className='print-values'>Print the Count rendered input values:<span>{count.current}</span></p>
+        <p className='print-values'>Print the Previous entered values here:<span>{PreviousValue.current}</span></p>
     </div>
   )
 }
