@@ -20,25 +20,28 @@ function LoginForm1() {
     };
 
   return (
-      <>
+      <div className='login-container'>
+     <h1 className='header'>Created Login page using useState Hook </h1>
 {
     loggedIn ? 
     <div>
-    <h1>You have successfully login</h1>
-    <button onClick={()=>{
+    <h2>You have successfully login</h2>
+    <p>Returns to the login form</p>
+    <button className='btn-logout' onClick={()=>{
         setLoggedIn(false);
         setError(false);
     }}>Logout</button>
 </div> 
 :
 <form onSubmit={handleSubmitForm} autoComplete='off'>
+<h2 className='header2'>Login</h2>
 <p className='red'>{error}</p>
-<input type="text" value={username} name='username' placeholder='username' onChange={(e)=>setUsername(e.target.value)} />
-<input type='password' value={password} name='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)}  />
-<button>Submit</button>
+<input type="text" value={username} name='username' placeholder='username' onChange={(e)=>setUsername(e.target.value)} /><br></br><br></br>
+<input type='password' value={password} name='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)} /><br></br><br></br>
+<button className='btn-submit'>Submit</button><br></br>
 </form>
 }
-</>
+</div>
  );
 };
 

@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+/*for toggle and delete data*/
 .btn-container{
   border: 1px solid green;
  padding: 10px;
@@ -47,6 +48,7 @@ input{
 .post{
   color: darkorange;
 }
+/*for fetching data*/
 .post-container{
   background-color: darkslategray;
   padding-bottom: 10px;
@@ -73,4 +75,37 @@ th{
 }
 .header_post{
   color:crimson
+}
+.red{
+  color: red;
+}
+/*for login form1 and form2*/
+.header2{
+  color: darkcyan;
+}
+.btn-submit{
+  background-color: darkgreen;
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 20px;
+  width: 100px;
+  outline: none;
+  border: none;
+}
+.btn-logout{
+  background-color: darkred;
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 20px;
+  width: 100px;
+  outline: none;
+  border: none;
+}
+.login-container{
+  background-color: cornsilk;
+  padding: 20px;
+  margin: 20px;
+  
 }
