@@ -107,5 +107,75 @@ th{
   background-color: cornsilk;
   padding: 20px;
   margin: 20px;
-  
-}
+  }
+  /*css for countdown timers */
+  #container{
+    background: rgb(201, 133, 147);
+    padding: 20px;
+    margin: 30px 30px 0px 30px;
+  }
+  .count-header1{
+    color:rgb(72, 72, 103)
+  }
+  .count-header2{
+    color: darkblue;
+  }
+  span{
+    color: rgb(245, 238, 231);
+    padding: 10px;
+  }
+  .btn{
+    width: 100px;
+    color: darkgreen;
+    background-color: cornsilk;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .btn-start{
+    width: 100px;
+    color: darkgreen;
+    background-color: cornsilk;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .btn-stop{
+    width: 100px;
+    color: rgb(235, 21, 28);
+    background-color: cornsilk;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  .btn-reset{
+    width: 100px;
+    color: rgb(234, 129, 8);
+    background-color: cornsilk;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
