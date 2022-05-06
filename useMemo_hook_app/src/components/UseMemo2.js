@@ -31,10 +31,10 @@ function UseMemo2() {
 
   return (
 
-    <div>
-        <h1>using useMemo with two states count and todos </h1>
+    <div className='container'>
+        <h1 className='header1'>using useMemo with two states count and todos </h1>
         <div>
-            <h1>Display Todos using useCallback Hook  text value here:</h1>
+            <h1 className='header2'>Display Todos using useCallback Hook  text value here:</h1>
             {
                 todos.map((todo,index)=>{
                     return <p key={index}>{todo}</p>
@@ -44,13 +44,13 @@ function UseMemo2() {
             <button onClick={addTodo}>addTodo</button>
         </div>
         <div>
-            <h2>increamnet count values using useMemo hook for return values  here</h2>
-            <h2>Count: {count}</h2>
+            <h1 className='header2'>increamnet count values using useMemo hook for return values  here:</h1>
+            <h2 className='header3'>Count: <span>{count}</span></h2>
             <button onClick={()=>setCount(count+1)}>Increment Count</button>
-            <h2>ExpensiveCalculation</h2>
-            <h2>Calculation value:{Calculation}</h2><br></br>
-            <h2>Factorial Calculatin using useMemo hook</h2>
-            <h2>Factorial value:{Factorial }</h2>
+            <h1 className='header2'>ExpensiveCalculation</h1>
+            <h2 className='header3'>Calculation value:<span>{Calculation}</span></h2><br></br>
+            <h1 className='header2'>Factorial Calculatin using useMemo hook</h1>
+            <h2 className='header3'>Factorial value:<span>{Factorial }</span></h2>
             <button onClick={()=>setNumber(number+1)}>Increment Factorial value</button>
         </div>
     </div>
