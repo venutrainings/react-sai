@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+.table-container{
+  background-color: rgb(180, 174, 185);
+  text-align: center;
+}
+th,td{
+  width: auto;
+  padding: 8px;
+  border: 1px solid green;
+}
+table{
+  width: 100%;
+
+}
