@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.container-nav{
+  background-color: rgb(100, 164, 164);
+  margin: 10px;
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start; */
+  border-radius: 6px;
+}
+.navbar{
+
+ height: 100%;
+ width: 100%;
+}
+.navbar .nav-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+li{
+  list-style-type: none;
+  text-transform: capitalize;
+text-decoration: none;
+display: inline-block;
+color: blue;
+margin: 10px;
+
+}
+span{
+  background-color: rgb(181, 162, 149);
+  padding: 5px;
+  
+}
+span:hover{
+  background-color: #fff;
+  color:darkgreen
+}
+img{
+  width: 100px;
+  margin-right: 10px;
+
+}
+.container-nav img{
+  margin: 0 0 0px 10px;
+}
+.fa-forumbee{
+  font-size: 30px;
+  margin: 10px;
+  color: azure;
+}
+
+.conatainer-main{
+/* background-image: url('https://cdn.wallpapersafari.com/43/23/B6DqCS.jpg'); */
+text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+ .header{
+  margin-top: 100px;
+  padding: 20px;
+  background-color: rgb(130, 151, 144);
+  width: fit-content;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-left: 30px;
+}
+.dashboard-container{
+  /* background-image: url('./images/7.jpg'); */
+  background-color: darkgrey;
+  width: auto;
+  height: 100vh;
+}
+
+.card-text{
+  color: rgb(30, 30, 38);
+  font-size: large;
+}
+.card-title{
+  color: rgb(247, 220, 152);
+}
