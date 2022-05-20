@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+.navbar-container{
+  background-color: rgb(114, 63, 73);
+}
+.nav-bar{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.link{
+  list-style-type: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: rgb(124, 124, 139);
+  margin: 10px;
+  font-weight: lighter;
+  background-color: white;
+  width: 80px;
+  margin-top: 25px;
+  height: 30px;
+}
+.link:hover{
+  background-color: darkgoldenrod;
+  color: darkgreen;
+}
+span{
+  text-decoration-style: none;
+}
+center{
+  margin-top: 80px;
+  background-color: darkgrey;
+  width: 900px;
+  text-align: center;
+  margin: 30px;
+ }
+ body{
+   background-color: rgb(154, 172, 172);
+ }
+ .header{
+   text-align-last: center;
+   color: darkorange;
+ }
