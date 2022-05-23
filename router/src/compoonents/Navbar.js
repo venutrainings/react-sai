@@ -29,6 +29,7 @@ function Navbar() {
                 <Link to='/about' className='link'><li>About</li></Link>
                 <Link to='/contact' className='link'><li>Contact</li></Link>
                 <Link to='/career' className='link'><li>Career</li></Link>
+                <Link to='/model' className='link'><li>Model</li></Link>
                  {/* <NavLink to='/about' ><li>About</li></NavLink>
                 <NavLink to='/contact'><li>Contact</li></NavLink>
                 <NavLink to='/career'><li>Career</li></NavLink> */}

@@ -1,14 +1,23 @@
 import React from 'react';
-import {useNavigate} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 function Home() {
-
+  const navigate=useNavigate();
   return (
-    <center>
-        <h2>Now your are in Home Page</h2>
+    <div className="home">
+       <h1>HOME </h1>
+       <h2>Now your are in Home Page</h2>
         <h4>Let's start learning About React router </h4>
-        
-    </center>
+        <p>React is a JavaScript-based UI development library. Facebook and an open-source developer community run it. Although React is a library rather than a language, it is widely used in web development. The library first appeared in May 2013 and is now one of the most commonly used frontend libraries for web developmen</p>
+    <div>
+    <button className='btn-back' onClick={()=>{
+            navigate(-1)
+    }}>Back</button>
+       <button className='btn-next' onClick={()=>{
+         navigate(+1)
+    }}>Next</button> 
+    </div>
+    </div>
   )
 }
 
