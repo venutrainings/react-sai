@@ -1,11 +1,19 @@
 import React from 'react'
+import OpenModel from './popups/OpenModel'
 
 function ModelWindow() {
+
+ 
+
+
   return (
     <div>
+      
          <div className='wrapper'>
             <div className='model-container'>
             <div className='model-content'>
+                <button>close</button>
+               
                 <h1> i am a model </h1>
             </div>
         </div>

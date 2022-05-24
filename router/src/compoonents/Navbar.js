@@ -30,6 +30,7 @@ function Navbar() {
                 <Link to='/contact' className='link'><li>Contact</li></Link>
                 <Link to='/career' className='link'><li>Career</li></Link>
                 <Link to='/model' className='link'><li>Model</li></Link>
+                <Link to='/OpenModel' className='link'><li>POPUP</li></Link>
                  {/* <NavLink to='/about' ><li>About</li></NavLink>
                 <NavLink to='/contact'><li>Contact</li></NavLink>
                 <NavLink to='/career'><li>Career</li></NavLink> */}
