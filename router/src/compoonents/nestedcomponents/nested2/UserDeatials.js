@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import {useParams} from 'react-router-dom';
-
+// import Table from '../../tableapidata/Table';
+const Table=lazy(()=>import('../../tableapidata/Table'))
 function UserDeatials() {
   const {userId}=useParams();
   return (
     <>
+    <Suspense fallback={<>loading .....</>}>
+      <Table />
+    </Suspense>
     <div className='details'>
    <h4 className='header'> UserDeatials : <h5>{userId}</h5></h4>
     </div>

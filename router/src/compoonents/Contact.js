@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import {Link, useNavigate,useParams} from 'react-router-dom';
-
+// import About from './About';
+const About = lazy(()=>import('./About'))
 
 
 function Contact() {
@@ -36,7 +37,11 @@ So by using throttling concept, we have to limit the fnResize method calls.</p>
     }}>Next </button>
 </div>
     </div>
-  
+  <div>
+    <Suspense fallback={<div>loading...</div>}>
+      <About />
+    </Suspense>
+  </div>
 </div>
   )
 }

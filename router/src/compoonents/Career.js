@@ -27,8 +27,8 @@ import { connect } from 'react-redux';
 users.map(user=>{
   return <div key={user.id}>
     <h1>{user.id}</h1>
-     {/* <Link to={`/${user.name}`}>{user.name}</Link> <br></br> */}
-     <Link to={`/userslist/${user.name}`}>{user.name}</Link> 
+      <Link to={`/${user.title}`}>{user.title}</Link> <br></br> 
+     {/* <Link to={`/userslist/${user.name}`}>{user.name}</Link>  */}
     {/* <button onClick={()=>
         // navigate(`/${user.name}`)
         navigate(`/userslist/${user.name}`)

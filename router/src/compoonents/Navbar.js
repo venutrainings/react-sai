@@ -33,6 +33,9 @@ function Navbar() {
                 <Link to='/OpenModel' className='link'><li>POPUP</li></Link>
                 <Link to='/products' className='link'><li>Products</li></Link>
                 <Link to='/userslist' className='link'><li>USERSLIST</li></Link>
+                <Link to='/error' className='link'><li>ERROR</li></Link>
+                
+
 
 
                  {/* <NavLink to='/about' ><li>About</li></NavLink>

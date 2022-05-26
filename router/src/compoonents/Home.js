@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import {useNavigate} from 'react-router-dom';
+ import Table from './tableapidata/Table';
+// const Table = lazy(()=>import('./tableapidata/Table'))
 
 function Home() {
   const navigate=useNavigate();
@@ -16,6 +18,11 @@ function Home() {
        <button className='btn-next' onClick={()=>{
          navigate(+1)
     }}>Next</button> 
+    </div>
+    <div>
+      <Suspense fallback={<h1>loading</h1>}>
+        <Table></Table>
+      </Suspense>
     </div>
     </div>
   )
