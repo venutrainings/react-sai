@@ -11,6 +11,8 @@ function Checkout() {
             <div>
                 <h2  className='checkout_title'>Your Shopping Products</h2>
                 <CheckoutProduct />
+                <CheckoutProduct />    
+                <CheckoutProduct />
             </div>
       </div>
       <div className='checkout_right'>
