@@ -1,23 +1,38 @@
 import React from 'react';
-import './CheckoutProduct.css'
+import './CheckoutProduct.css';
+import {useStateValues} from '../Provider';
 
-function CheckoutProduct() {
+function CheckoutProduct({id,title,image,price,rating}) {
+  const [state,dispatch]=useStateValues();
+
+  const RemoveFromBasket=()=>{
+      
+        dispatch({
+              type:'REMOVE_FROM_BASKET',
+            id
+        })
+      
+  }
   return (
     <div className='checkoutProduct'>
-        <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/03/20-free-things-you-need-to-do-after-launching-your-ecommerce-website-5e664bcb60da5-1520x800.png"  alt='' className='checkoutProduct_image' />
+        <img src={image} alt='' className='checkoutProduct_image' />
 
         <div className='checkoutProduct_info'>
             <p className='checkoutProduct_title'>
-            Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops price:109.95,description Your perfect pack for everyday use and walks in the forest.
+              {title}
             </p>
             <p className='checkoutProduct_price'>
                 <small>$</small>
-                <strong>200</strong>
+                <strong>{price}</strong>
             </p>
             <div className='checkoutProduct_rating'>
-                ⭐⭐
+                {
+                  Array(rating).fill().map((_,i)=>(
+                    <p>⭐</p>
+                  ))
+                }
             </div>
-            <button>Remove from Basket</button>
+            <button onClick={RemoveFromBasket}>Remove from Basket</button>
         </div>
     </div>
   )

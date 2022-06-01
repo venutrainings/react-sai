@@ -4,10 +4,10 @@
   margin-bottom: 20px;
 }
 .checkoutProduct_info{
-    padding-left: 20px;
+    padding-left: 30px;
 }
 .checkoutProduct_image{
-    width: 250px;
+    width: 180px;
     height: 180px;
     object-fit: contain;
 }

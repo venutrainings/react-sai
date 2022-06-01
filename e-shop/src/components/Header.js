@@ -25,10 +25,13 @@ const [{basket},dispatch]=useStateValues()
             <SearchIcon className='search-icon'/>
         </div>
        <div className="header-nav">
-            <div className="nav-item">
+       <Link to='/login' style={{textDecoration:'none'}}>
+       <div className="nav-item">
                 <span className="nav-itemLineOne">Hello Guest</span>
                 <span className="nav-itemLineTwo">Sign In</span>
             </div>
+        </Link>
+           
             <div className="nav-item">
                 <span className="nav-itemLineOne">Your</span>
                 <span className="nav-itemLineTwo">Shop</span>
