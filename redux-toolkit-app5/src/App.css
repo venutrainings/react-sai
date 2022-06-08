@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: darkgray;
+  height: 100vh;
+}
+.userlist{
+  background-color: white;
+  width: 500px;
+  padding: 20px;
+}
+.user{
+  background-color: darkcyan;
+  margin-bottom: 10px;
+}
+i{
+  margin-right: 20px;
+}
