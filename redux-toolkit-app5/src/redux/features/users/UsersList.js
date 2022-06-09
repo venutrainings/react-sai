@@ -1,11 +1,13 @@
 
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate,Link } from 'react-router-dom';
+import {deleteUser} from './UserSlice';
 
 
 function UsersList() {
-    const  users=useSelector((store)=>store.users);
+    const  users = useSelector((store)=>store.users);
+    const dispatch = useDispatch()
  
 
     // const navigate=useNavigate()
@@ -28,7 +30,13 @@ function UsersList() {
 
                                     <div className='icons'>
                                         <Link to={`edituser/${user.id}`}><i class="fa-solid fa-pen"></i></Link>
-                                        <i class="fa-regular fa-trash-can"></i>
+                                        <i class="fa-regular fa-trash-can" onClick={
+                                            ()=>{
+                                                dispatch(deleteUser({
+                                                    id:user.id
+                                                }))
+                                            }
+                                        }></i>
                                     </div>
                                 </div>
                                 

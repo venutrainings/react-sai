@@ -1,26 +1,30 @@
 import React, {useState} from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
-import TextField from './TextField'
+import TextField from './TextField';
+import {editUser} from '../redux/features/users/UserSlice'
 
 function EditUser() {
-    const users=useSelector((store)=>store.users)
-    const params=useParams();
-    console.log(params);
-    const navigate=useNavigate();
-    const existingUser=users.filter((user)=>user.id === params.id);
-    const {name,email} = existingUser[0];
-    const [values,setValues]=useState({
-        name,
-        email
-    });
+  const params = useParams();
+  const dispatch = useDispatch();
+  const users = useSelector(store => store.users);
+  const navigate = useNavigate();
+  const existingUser = users.filter(user => user.id === params.id);
+  const {name,email} = existingUser;
+  const [values, setValues] = useState({
+    name,
+    email
+  });
 
-    const EditHandler=(e)=>{
-            e.preventDefault();
-           
-        setValues({name:'',email:''});
-        navigate('/')
-    }
+  const EditHandler = () => {
+    setValues({ name: '', email: '' });
+    dispatch(editUser({
+      id: params.id,
+      name: values.name,
+      email: values.email
+    }));
+    navigate('/');
+  }
   return (
     <div>
         <h3>Edit User Details here:</h3>
@@ -41,4 +45,4 @@ function EditUser() {
   )
 }
 
-export default EditUser
+export default EditUser;
