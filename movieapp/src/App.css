@@ -1,0 +1,16 @@
+body{
+    background: #141414;
+    color: #f1f1f1;
+}
+.movies-app > .row {
+    overflow: auto;
+    flex-wrap: nowrap;
+}
+.image-container{
+    position: relative;
+ transition: transform 0.2s;
+}
+.image-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
