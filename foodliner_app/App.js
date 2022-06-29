@@ -1,21 +1,28 @@
 
 import { StyleSheet, Text, View } from 'react-native';
-import Singup from './components/screens/Singup';
-import {NavigationContainer} from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from './components/screens/Login';
+import SignUp from './components/screens/SignUp';
+import Login from './components/screens/Login'
+import Footer from './components/Footer';
+import Scanner from './components/screens/Scanner';
+
 
 const Stack = createNativeStackNavigator();
-export default function App() {
+
+function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        {/* <Stack.Screen name='login' component={Login} /> */}
-        <Stack.Screen name='singup' component={Singup} />
-
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="SING UP" component={SignUp} />
+        <Stack.Screen name="SCAN PRODUCT" component={Scanner} />
       </Stack.Navigator>
+      <Footer />
     </NavigationContainer>
+    // <SignUp />
   );
 }
+
+export default App;
 
