@@ -5,35 +5,40 @@ import MaterialIcon  from 'react-native-vector-icons/MaterialIcons';
 import Ionicons  from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons  from 'react-native-vector-icons/MaterialCommunityIcons';
 import Image2 from '../assets/scanner.png';
-
-const HeaderTitle = ({navigation}) => {
+const Header = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>White's Foodliner</Text>
-      <Text style={styles.text}>All Shoppings and savings in one App</Text>
-     <View style={styles.inputContainer}>
-        <MaterialIcon name='search' style={styles.icon} />
-        <TextInput  style={styles.input }placeholder='What are you looking for?' />
-      
-       <MaterialIcon name='mic' style={styles.icon} />
-      <TouchableOpacity style={styles.imgContainer} onPress={()=>navigation.navigate('SCAN PRODUCT')}   >
-      
-      <MaterialCommunityIcons name='barcode-scan' style={styles.icon}  />
+    <Text style={styles.text}>White's Foodliner</Text>
+    <Text style={styles.text}>All Shoppings and savings in one App</Text>
+   <View style={styles.inputContainer}>
+      <MaterialIcon name='search' style={styles.icon} />
+      <TextInput  style={styles.input }placeholder='What are you looking for?' />
+    
+     <MaterialIcon name='mic' style={styles.icon} />
+    {/* <TouchableOpacity style={styles.imgContainer} onPress={()=>navigation.navigate('SCAN PRODUCT')}   >
+    
+    <MaterialCommunityIcons name='barcode-scan' style={styles.icon}  />
 
-      </TouchableOpacity>
+    </TouchableOpacity> */}
 
-      
-
-
+    
 
 
-     </View>
 
-    </View>
+
+   </View>
+   <TouchableOpacity onPress={()=>navigation.navigate('SCAN PRODUCT')} >
+   <MaterialCommunityIcons name='barcode-scan' style={styles.icon} />
+
+   </TouchableOpacity>
+   
+   
+
+  </View>
   )
 }
 
-export default HeaderTitle
+export default Header
 
 const styles = StyleSheet.create({
     container:{
