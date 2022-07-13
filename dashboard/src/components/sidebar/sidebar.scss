@@ -1,0 +1,24 @@
+.sidebar{
+    //background-color: blueviolet;
+    flex: 1;
+    border-right: 0.5px solid rgb(185, 183, 183);
+    background-color: brown;
+    min-height: 100vh;
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+//background-color: blueviolet;
+        top: 50px;
+        .logo{
+            font-weight: bold;
+            font-size: 20px;
+            color: darkblue;
+        }
+    }
+    hr{
+        height:0;
+        border: 0.5px solid rgb(185, 183, 183);
+    }
+}
