@@ -13,7 +13,12 @@ function Featured() {
             <MoreVertOutlinedIcon fontSize='small' />
         </div>
         <div className='bottom'>
+            <div className='featuredChart'>
             <CircularProgressbar value={70} text={"70%"} strokeWidth={5}    />
+            </div>
+            <p className='title'>Total sales made Today</p>
+            <p className='amount'>$420</p>
+            <p className='desc'>Previous transactions are processing. Last payments may not be include.</p>
         </div>
     </div>
   )
