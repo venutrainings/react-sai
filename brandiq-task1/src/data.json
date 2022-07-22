@@ -1,1 +1,4 @@
-[{"firstName":"","lastname":"","email":"","password":"","country":"","address":"","gender":"","sports":"","phone":"","zipcode":""}]
+{
+    "name":"",
+    "email":""
+}

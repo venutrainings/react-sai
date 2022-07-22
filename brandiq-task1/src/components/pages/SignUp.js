@@ -8,28 +8,45 @@ import Data from '../../data.json'
 const SignUp=()=>{
 
 
- const {register,handleSubmit,formState:{errors}} = useForm();
-const [formData,setFormData] = useState(Data);
+ const {register,handleSubmit,formState:{errors}} = useForm({
+  defaultValues:{
+    firstName:'',
+    lastname:'',
+    email:'',
+    password:'',
+    phone:'',
+    zipcode:''
+    
+  }
+ });
+const [formData,setFormData] = useState([]);
+const [jsondata,setJsondata] = useState(Data)
 
 
 
-
+   console.log(Data)
    const onSubmit = (data,e) =>{
       e.preventDefault();
-    //  console.log(data);
+     console.log(data);
      setFormData(data);
+    // setFormData (Data)
+    // setJsondata(data)
    }
   // console.log(errors)
   return(
     <div className='container'> 
     <h4 style={{textAlign:'center',marginTop:20}}>Register Application</h4>
-   
+
+    <p>{Data.length}</p>
+  
         <form onSubmit={handleSubmit(onSubmit)} >
           <div className='form-group mt-7 mb-3'>
           <label>First Name</label>
-          <input type='text' id='fisrtname' placeholder='please enter fisrt name' className='form-control' name='firstname' {...register('firstName',{required:{value:true,message:'please enter the fisrt name filed'},
+          <input type='text' id='fisrtname' placeholder='please enter fisrt name' className='form-control'name='firstname' {...register('firstName',{
+            required:{value:true,message:'please enter the fisrt name filed'},
+            
             // minLength:{
-            //   value:10,
+            //   value:10,s
             //   message:'please enter the name with min 10 characters'
             // },
             // maxLength:{
@@ -125,7 +142,7 @@ const [formData,setFormData] = useState(Data);
           <small className='form-text text-danger'>{errors.address?.message}</small>
           </div>
 
-          <div className='form-group mb-3'>
+          {/* <div className='form-group mb-3'>
             <label>Gender: {" "}</label>
             
             <input  type='radio' value='male' name='gender' {...register('gender',{
@@ -176,8 +193,8 @@ const [formData,setFormData] = useState(Data);
 
             <small className='text-danger' style={{display:'block'}}>{errors.sports?.message}</small>
                         
-          </div>
-          <div className='form-group mb-3'>
+          </div> */}
+          {/* <div className='form-group mb-3'>
               <label>Contact Details</label>
               <input type='text' className='form-control' placeholder='Please enter phone number' {...register("phone",{
                 required:{
@@ -195,8 +212,8 @@ const [formData,setFormData] = useState(Data);
                 // }
               })} />
               <small className='form-text text-danger'>{errors.phone?.message}</small>
-          </div>
-          <div className='form-group mb-3'>
+          </div> */}
+          {/* <div className='form-group mb-3'>
             <label>Zipcode</label>
             <input type='number' className='form-control'{...register('zipcode',{
               required:'true',
@@ -207,7 +224,7 @@ const [formData,setFormData] = useState(Data);
             <small className='form-text text-danger'>{errors.zipcode?.type==="minLength" && "this field is required min 4 characters"}</small>
             <small className='form-text text-danger'>{errors.zipcode?.type==="maxLength" && "this field is required max 10 characters"}</small>
             
-          </div>
+          </div> */}
           <input type='submit' value='submit' />
         </form>
         <div>
