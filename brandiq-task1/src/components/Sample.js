@@ -1,8 +1,8 @@
 import React , {useState} from 'react';
-import json from '../data.json'
-import {useForm} from 'react-hook-form'
-;
-import { isDisabled } from '@testing-library/user-event/dist/utils';
+// import json from '../data.json';
+import axios from 'axios';
+import {useForm} from 'react-hook-form';
+import fs from "fs"; 
 function Sample() {
  
  const {register,handleSubmit,formState:{errors},setValue,watch,setError}= useForm({
@@ -12,28 +12,50 @@ function Sample() {
         email:''
     }
  });
-  const [data,setData] = useState(json);
-  const [isloading,setIsloading] = useState(false);
-  const [formdata,setFormdata] = useState(data)
-  const onSubmit = (data, e ) =>{
-    e.preventDefault();
-    console.log(data);
-    setFormdata(data);
-    setValue('email','',{shouldValidate:true});
-    setValue('name','',{shouldValidate:true});
 
-  } 
+ const [jsondata,setJsondata] = useState(require("../data.json"));
+  // const [data,setData] = useState([]);
+  //  const [isloading,setIsloading] = useState(false);
+  //  const [formdata,setFormdata] = useState(data)
+
+  window.onbeforeunload = () => {
+    console.log("Page Reloaded");
+  
+    fs.writeFile("data.json", JSON.stringify(jsondata), (ex) => {
+      if (ex) throw ex.message;
+  
+      console.log("State copying successful.");
+    });
+  };
+
+
+  const onSubmit = (data, e ) =>{
+  e.preventDefault();
+    console.log(data);
+   setJsondata(data);
+
+  //   setData(data);
+  //   setFormdata(data);
+  //   setValue('email','',{shouldValidate:true})
+  //   setValue('name','',{shouldValidate:true});
+
+  //     setFormdata({name:'',email:''})
+  }
  //  const name = watch('name')    
   return (
     <div>
         <h4>simple validation</h4>
 
         <div style={{background:'darkred' , padding:10,color:'white',marginBottom:10}}>
-        <prev>{JSON.stringify(formdata,undefined,2)}</prev>
+        {/* <prev>{JSON.stringify(formdata,undefined,2)}</prev>  */}
 
         </div>
-
-        <table>
+      <>
+      {
+              json.length
+            } 
+      </>
+        {/* <table>
           <thead>
             <tr>
               <th>Phone</th>
@@ -41,17 +63,18 @@ function Sample() {
             </tr>
           </thead>
           <tbody>
+           
             <tr>
-              <td>{formdata.name}</td>
-              <td>{formdata.email}</td>
+              <td>{json.name}</td>
+              <td>{json.email}</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       
         <form onSubmit={handleSubmit(onSubmit)}>
            <div className='form-group mt-30 mb-3'>
             <label className='form-label'>NAME</label>
-            <input type='text' placeholder = 'Enter Name' className='form-control' {...register('name',{
+            <input type='text' placeholder = 'Enter Name'defaultValue={formdata.name} className='form-control' {...register('name',{
                 required:true,
               validate:(value) => {
                   
@@ -68,7 +91,7 @@ function Sample() {
            <div className='form-group mb-5'>
             <label className='form-label'>Email</label>
 
-           <input type='email' placeholder = 'Enter Name' className='form-control' {...register('email',{
+           <input type='email' placeholder = 'Enter Name' defaultValue={formdata.email} className='form-control' {...register('email',{
             required:true,
             // validate:(value) => value === name || 'names not matached '
             // validate:(value) => {
