@@ -17,11 +17,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    
     "start": "react-scripts start",
-    "serverNode":"node ./src/server.js",
-    "server":"nodemon ./src/server.js",
-    "client":"react-scripts start",
-    "dev":"concurrently \"npm server \"npm client\"",
+
+    "serverNode": "node server.js",
+
+    "server": "nodemon server.js",
+    "client": "react-scripts start",
+
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
 
     "build": "react-scripts build",
     "test": "react-scripts test",
