@@ -1,23 +1,56 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import {useForm, Contoller} from 'react-hook-form';
+
 import Data from '../data.json';
 
-function FetchApi() {
+import * as fs from 'fs';
+
+
+
+
+
+
+
+
+function ReactFetch() {
     const {register,handleSubmit,formState:{errors},reset} = useForm();
-    const [data,setData] = useState(Data);
+
+  
+
+
+
+//const [data,setData] = useState(Data);
+
      const onSubmit = (data) =>{
-        console.log(data);
-        setData(data);
-        saveJson([data]);
+        console.log(JSON.stringify(data));
         reset();
+     
+         TextInput([data]);
+    
      }
+    const TextInput=(data)=>{
+        fs.writeFile('./Myfile.json',data,(err)=>{
+           if(err) {
+            console.log('something went wrong in this file: ',err)
+           } else{
+            console.log('done')
+           }
+        })
+    }
 
-     const saveJson = (post)=>{
-        const URL = 'http://localhost:4000/write';
-        axios.post(URL,post).then(res => console.log(res))
-     }
+    // const TextInput = (jsonData) => {
+    //     const element = document.createElement('a');
+    //     const textFile = new Blob([JSON.stringify(jsonData)],{type:'text/plain'});
+    //     element.href = URL.createObjectURL(textFile);
+    //     element.download = 'Myfile.json';
+    //    document.body.appendChild(element);
+    //     element.click();
 
+    // }
+
+    
+   
   return (
     <div>
         <h4>Fetch Api Data</h4>
@@ -70,46 +103,12 @@ function FetchApi() {
             <input type = 'submit' value='Submit' className='form-control btn btn-info '/> 
            
         </form>
-        <div>
+        
             
-               {/* {
-                Data.map((each)=>{
-                    return <div key={each.id} style={{marginTop:20,textAlign:'center',border:'1px solid darkred'}}>
-                        <p>NAME : {each.name}</p>
-                        <p>EMAIL :  {each.email}</p>
-                    </div>
-                })
-               } */}
-  <div style={{marginTop:20,textAlign:'center',border:'1px solid darkred'}}>
-                        <p>NAME : {data.name}</p>
-                        <p>EMAIL :  {data.email}</p>
-                        <p>CITY :  {data.city}</p>
-                        <p>ADDRESS:  {data.address1}</p>
-                        <p>PHONE:  {data.phone}</p>
-                    </div>
-            
-        </div>
+             
+ 
     </div>
   )
 }
 
-export default FetchApi
-
-
-
-
-//   fetch('https://jsonplaceholder.typicode.com/users',{
-//     method:'POST',
-//     body:JSON.stringify({
-//         id:'',
-//         name:'',
-//         email:'',
-//         address1:'',
-//         phone:''
-//     }),
-//     headers:{
-//         'content-type':'application/json',
-//         Access :'application/json',
-//         Authorization:'Bearer 976f9d976a54effb7542419bf7fd698fd6e349ea8b283c7f2e19819bf87e1a36'
-//     }
-//  }).then(response => response.json).then(json => console.log(json))
+export default ReactFetch;
