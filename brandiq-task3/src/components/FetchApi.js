@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, {useState} from 'react';
 import {useForm, Contoller} from 'react-hook-form';
-import Data from '../data.json';
+// import Data from '../data.json';
 
 function FetchApi() {
     const {register,handleSubmit,formState:{errors},reset} = useForm();
-    const [data,setData] = useState(Data);
+    const [data,setData] = useState();
      const onSubmit = (data) =>{
         console.log(data);
         setData(data);

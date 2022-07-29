@@ -15,6 +15,7 @@
     "dateformat": "^5.0.3",
     "express": "^4.18.1",
     "fallback": "^1.0.1",
+    "file-fetch": "^1.7.0",
     "fs-react": "^0.0.4",
     "path": "^0.12.7",
     "react": "^18.2.0",
@@ -44,8 +45,8 @@
     "fs": false,
     "path": false
   },
-  "node":{
-    "fs":"empty"
+  "node": {
+    "fs": "empty"
   },
   "browserslist": {
     "production": [
@@ -64,8 +65,4 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.19"
   }
-
-
-
-
 }
